@@ -1,7 +1,7 @@
 
 FROM debian
 RUN apt update
-RUN DEBIAN_FRONTEND=noninteractive apt install ssh wget npm nano squid  -y
+RUN DEBIAN_FRONTEND=noninteractive apt install ssh wget npm nano squid proot  -y
 RUN  npm install -g wstunnel
 RUN mkdir /run/sshd 
 RUN echo 'squid' >>/tu.sh
