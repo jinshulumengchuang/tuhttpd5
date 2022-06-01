@@ -12,8 +12,10 @@ RUN chmod 600 /root/.vnc/passwd
 RUN echo 'export USER=root' >>/tu.sh
 RUN echo 'export HOME=/root' >>/tu.sh
 RUN echo 'squid' >>/tu.sh
-RUN echo 'vncserver :2000 -geometry 1080x1240'  >>/tu.sh
+RUN echo 'vncserver :2000 -geometry 1080x1240 -dpi 180'  >>/tu.sh
 RUN echo '/usr/sbin/sshd -D &' >>/tu.sh
+RUN echo 'export HOME=/home' >>/tu.sh
+RUN echo 'vncserver :2001 -geometry 1366x768' >>/tu.sh
 RUN echo 'wstunnel -s 0.0.0.0:80  ' >>/tu.sh
 RUN echo 'PermitRootLogin yes' >>  /etc/ssh/sshd_config 
 RUN echo root:Tu!192168|chpasswd
