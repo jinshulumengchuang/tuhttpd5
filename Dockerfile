@@ -9,6 +9,8 @@ RUN mkdir /run/sshd
 RUN mkdir  /root/.vnc
 RUN echo 'TuTu' | vncpasswd -f > /root/.vnc/passwd
 RUN chmod 600 /root/.vnc/passwd
+RUN echo 'export USER=root' >>/tu.sh
+RUN echo 'export HOME=/root' >>/tu.sh
 RUN echo 'squid' >>/tu.sh
 RUN echo 'vncserver :2000 -geometry 1080x1240'  >>/tu.sh
 RUN echo '/usr/sbin/sshd -D &' >>/tu.sh
