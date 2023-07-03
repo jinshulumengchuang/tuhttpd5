@@ -4,6 +4,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt install ssh wget nano   -y
 RUN wget https://github.com/jpillora/chisel/releases/download/v1.8.1/chisel_1.8.1_linux_amd64.gz
 RUN gunzip chisel_1.8.1_linux_amd64.gz
 RUN mv chisel_1.8.1_linux_amd64 /bin/chisel
+RUN chmod 755 /bin/chisel
 RUN mkdir /run/sshd 
 RUN echo '/usr/sbin/sshd -D &' >>/tu.sh
 RUN echo 'chisel server' >>/tu.sh
